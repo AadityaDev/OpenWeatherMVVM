@@ -1,9 +1,7 @@
 package com.aditya.openweathermvvm.ui.list;
 
 import android.content.Context;
-import android.net.ParseException;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +17,7 @@ import com.aditya.openweathermvvm.data.model.weather.CityWeather;
 import com.aditya.openweathermvvm.data.model.weather.WeatherInfo;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -102,7 +101,7 @@ public class WeatherInfoListAdapter extends RecyclerView.Adapter<WeatherInfoList
             });
         }
 
-        void bind(String country, WeatherInfo weatherInfo) {
+        void bind(String country, @NonNull WeatherInfo weatherInfo) {
             this.weatherInfo = weatherInfo;
             if(weatherInfo != null && weatherInfo.weather != null && weatherInfo.weather.get(0) != null
              && weatherInfo.weather.get(0).icon != null) {
@@ -128,8 +127,8 @@ public class WeatherInfoListAdapter extends RecyclerView.Adapter<WeatherInfoList
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             try {
                 Date date = format.parse(dtStart);
-                weatherDateTextView.setText(date.getDate() + "");
-            } catch (ParseException | java.text.ParseException e) {
+                weatherDateTextView.setText(date + "");
+            } catch (ParseException e) {
                 e.printStackTrace();
             }
         }
