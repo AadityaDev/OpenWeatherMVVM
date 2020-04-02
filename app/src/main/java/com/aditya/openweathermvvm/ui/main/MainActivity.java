@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.aditya.openweathermvvm.R;
 import com.aditya.openweathermvvm.base.BaseActivity;
-import com.aditya.openweathermvvm.ui.list.ListFragment;
 import com.aditya.openweathermvvm.ui.list.WeatherInfoListFragment;
 
 public class MainActivity extends BaseActivity {
@@ -18,8 +17,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.screenContainer, new ListFragment()).commit();
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.screenContainer, new WeatherInfoListFragment()).commit();
         }

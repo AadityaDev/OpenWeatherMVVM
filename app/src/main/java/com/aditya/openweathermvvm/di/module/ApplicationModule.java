@@ -1,6 +1,5 @@
 package com.aditya.openweathermvvm.di.module;
 
-import com.aditya.openweathermvvm.data.rest.RepoService;
 import com.aditya.openweathermvvm.data.rest.WeatherService;
 
 import javax.inject.Singleton;
@@ -24,12 +23,6 @@ public class ApplicationModule {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-    }
-
-    @Singleton
-    @Provides
-    static RepoService provideRetrofitService(Retrofit retrofit) {
-        return retrofit.create(RepoService.class);
     }
 
     @Singleton
