@@ -1,6 +1,7 @@
 package com.aditya.openweathermvvm.di.module;
 
 import com.aditya.openweathermvvm.data.rest.RepoService;
+import com.aditya.openweathermvvm.data.rest.WeatherService;
 
 import javax.inject.Singleton;
 
@@ -29,5 +30,11 @@ public class ApplicationModule {
     @Provides
     static RepoService provideRetrofitService(Retrofit retrofit) {
         return retrofit.create(RepoService.class);
+    }
+
+    @Singleton
+    @Provides
+    static WeatherService provideWeatherService(Retrofit retrofit) {
+        return retrofit.create(WeatherService.class);
     }
 }

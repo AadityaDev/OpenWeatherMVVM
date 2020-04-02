@@ -11,4 +11,5 @@ public abstract class ActivityBindingModule {
 
     @ContributesAndroidInjector(modules = {MainFragmentBindingModule.class})
     abstract MainActivity bindMainActivity();
+
 }

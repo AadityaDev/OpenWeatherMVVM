@@ -16,7 +16,12 @@ import dagger.android.support.AndroidSupportInjectionModule;
 import dagger.android.support.DaggerApplication;
 
 @Singleton
-@Component(modules = {ContextModule.class, ApplicationModule.class, AndroidSupportInjectionModule.class, ActivityBindingModule.class})
+@Component(modules = {
+        ContextModule.class,
+        ApplicationModule.class,
+        AndroidSupportInjectionModule.class,
+        ActivityBindingModule.class
+})
 public interface ApplicationComponent extends AndroidInjector<DaggerApplication> {
 
     void inject(BaseApplication application);

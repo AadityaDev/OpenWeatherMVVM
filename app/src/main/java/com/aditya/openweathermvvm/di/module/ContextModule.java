@@ -11,4 +11,5 @@ public abstract class ContextModule {
 
     @Binds
     abstract Context provideContext(Application application);
+
 }
